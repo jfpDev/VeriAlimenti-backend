@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Galería</title>
+    <script>
+      const url = 'http://localhost:8080/db/articles';
+      //const url = '/db/articles'
+
+      function getArticles(){
+        let articlesLength;
+        fetch(url,{
+          method: 'GET',
+          headers: {
+            'Accept': 'text/html,application/xhtml+xml,application/xml,application/json',
+            'Content-Type': 'text/html,application/xhtml+xml,application/xml,application/json',
+          }
+        })
+          .then(res => res.json())
+          //.then(data => console.log(Object.entries(data)))
+          .then(data => {
+            let counter = 0;
+            const HTMLarticles = document.getElementById('articlesHTML');
+            articlesLength = data.length;
+
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode("Hola!¿Qué tal?");
+            newDiv.appendChild(newContent); //añade texto al div creado.
+            // añade el elemento creado y su contenido al DOM
+            const currentDiv = document.getElementById("articlesHTML");
+            document.body.insertBefore(newDiv, currentDiv);
+/*
+            const newDArticle = document.createElement("th");
+            newDArticle.innerHTML = data[counter].name;                   // Insert text
+            //document.body.appendChild(newDArticle);
+            document.body.insertBefore(newDArticle,HTMLarticles);
+
+            while(counter < articlesLength){
+              const newDArticle = document.createElement("th");
+              newDArticle.innerHTML = data[counter].name;                   // Insert text
+              //document.body.appendChild(newDArticle);
+              HTMLarticles.insertBefore(newDArticle,HTMLarticles);
+              counter++;
+            }*/
+          })
+          .catch(err => console.error(err))
+          }
+      getArticles();
+
+    </script>
+  </head>
+  <body>
+    <h1>¡Mirá ve! Aquí en Veri Alimenti hay de todo</h1>
+    <div class="galeryArticles">
+      <table>
+        <thead>
+          <tr>
+            <th>uno</th>
+            <th>otro</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr id="articlesHTML">
+
+            </tr>
+        </tbody>
+        </table>
+      </div>
+  </body>
+</html>
+
+
+<!-- *** ADD OR EDIT HTML INSIDE OF THE dmRespCol DIVS, SEE DOCUMENTATION FOR GUIDELINES ***
+<div dm:templateorder="100" class="dmAboutusRespTmpl mainBorder" id="1271349918">
+<div class="innerPageTmplBox dmRespRowsWrapper" id="1707139628">
+<div class="u_1062939235 dmRespRow dmStoreRow fullBleedChanged" id="1062939235" data-anim-desktop="fadeIn">
+ <div class="dmRespColsWrapper" id="1269551872">
+  <div class="u_1633493651 small-12 dmRespCol large-3 medium-3" id="1633493651">
+   <!-- *** INSERT YOUR HTML BELOW ***
+   <div class="dmStoreSearch" dmle_widget="ec_store_search" id="1667808792" data-element-type="ec_store_search">
+    <div class="dmStoreSearchWrapper" id="1158579669">
+     <input type="text" placeholder="Search Store..." class="dmStoreSearchInput" maxlength="100" id="1586073546"/>
+     <div class="dmStoreSearchClickOverlay" id="1410149643">
+     </div>
+     <div class="dmStoreSearchIcon dm-icon-search2" id="1875952013">
+     </div>
+    </div>
+   </div>
+   <div class="dmDividerWrapper clearfix" dmle_widget="dudaDividerId" id="1068862814" data-element-type="dDividerId">
+    <hr class="dmDivider" id="1488052466"/>
+   </div>
+   <!-- *** This is a dynamic element, it transforms into a widget when the page renders ***
+   <span dmle_extension="ec_store_categories" wr="false" icon="true" surround="false" data-dmtmpl="true" id="1326641307" class="u_1326641307">
+   </span>
+  </div>
+  <div class="u_1122407573 dmRespCol small-12 large-9 medium-9" id="1122407573">
+   <!-- *** INSERT YOUR HTML BELOW *** -->
+   <!-- *** This is a dynamic element, it transforms into a widget when the page renders ***
+   <span dmle_extension="ec_store" wr="false" icon="true" surround="false" data-store="eyJpZCI6Nzc5MjExMywiZ3JpZFZpZXdNYXhQcm9kdWN0c1BlclJvdyI6MywiZ3JpZFZpZXdNYXhQcm9kdWN0c1BlckNvbHVtbiI6MywidGFibGVWaWV3U2l6ZSI6MjAsImxpc3RWaWV3U2l6ZSI6MTAsInNlYXJjaE1vZGVWaWV3IjoibGlzdCIsImNhdGVnb3JpZXNNb2RlVmlldyI6ImdyaWQiLCJzdG9yZVBhZ2VBbGlhcyI6InN0b3JlIiwic2hvd0JyZWFkY3J1bWJzIjp0cnVlLCJwcm9kdWN0TGlzdEltYWdlU2l6ZSI6Im1lZGl1bSIsInByb2R1Y3RMaXN0SW1hZ2VBc3BlY3RSYXRpbyI6InNxdWFyZV8xIiwicHJvZHVjdExpc3RJbWFnZUhhc1NoYWRvdyI6ImZhbHNlIiwicHJvZHVjdExpc3RTaG93QWRkaXRpb25hbEltYWdlT25Ib3ZlciI6ImZhbHNlIiwicHJvZHVjdExpc3RTaG93RnJhbWUiOiJ0cnVlIiwicHJvZHVjdExpc3RUaXRsZUJlaGF2aW9yIjoic2hvdyIsInByb2R1Y3RMaXN0U2t1QmVoYXZpb3IiOiJoaWRlIiwicHJvZHVjdExpc3RDYXRlZ29yeUltYWdlU2l6ZSI6Im1lZGl1bSIsInByb2R1Y3RMaXN0Q2F0ZWdvcnlJbWFnZUFzcGVjdFJhdGlvIjoic3F1YXJlXzEiLCJwcm9kdWN0TGlzdENhdGVnb3J5VGl0bGVCZWhhdmlvciI6InNob3dfYmVsb3dfaW1hZ2UiLCJzaG93Rm9vdGVyTWVudSI6ImZhbHNlIiwicHJvZHVjdExpc3RTaG93U29ydFZpZXdhc09wdGlvbnMiOiJ0cnVlIiwicHJvZHVjdERldGFpbHNTaG93UXR5IjoiZmFsc2UiLCJwcm9kdWN0RGV0YWlsc1Nob3dOdW1iZXJPZkl0ZW1zSW5TdG9jayI6ImZhbHNlIiwicHJvZHVjdERldGFpbHNTaG93U2hhcmVCdXR0b25zIjoiZmFsc2UiLCJwcm9kdWN0RGV0YWlsc0dhbGxlcnlMYXlvdXQiOiJJTUFHRV9TSU5HTEVfVEhVTUJOQUlMU19WRVJUSUNBTCIsIm1vYmlsZVByb2R1Y3RMaXN0Q2VsbFNwYWNpbmciOiI1IiwibW9iaWxlUHJvZHVjdExpc3RDYXRlZ29yeUNlbGxTcGFjaW5nIjoiNSIsInN0b3JlVmVyc2lvbiI6MSwidXNlU2VydmVyU2lkZVJlbmRlcmluZyI6ZmFsc2UsImlzUmVkaXJlY3RTZWFyY2hSZXN1bHRzIjp0cnVlfQ==" id="1294046481" class="u_1294046481" data-anim-desktop="fadeInRight">
+   </span>
+   <div dmle_widget="spacer" class="u_1316580017 dmSpacer" id="1316580017" data-element-type="spacer">
+   </div>
+  </div>
+ </div>
+</div>
+<div class="u_1688026295 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1688026295">
+ <div class="dmRespColsWrapper" id="1557386928">
+  <div class="dmRespCol small-12 medium-12 large-12" id="1639012851">
+   <!-- *** INSERT YOUR HTML BELOW ***
+   <h2 class="dmNewParagraph u_1303909455" dmle_widget="paragraph" id="1303909455" data-uialign="center" no_space_e="true" data-anim-desktop="fadeInUp" data-element-type="paragraph">
+    <div style="text-align: center;" no_space_b="true" no_space_e="true">
+     <span style="color: rgb(81, 81, 81);" no_space_b="true" no_space_e="true" class="lh-1 size-32 m-specific m-size-24">
+      Productos frescos para hoy
+      <br no_space_b="true" no_space_e="true"/>
+     </span>
+    </div>
+   </h2>
+   <div class="dmStoreSearch u_1226157836" dmle_widget="ec_store_search" data-element-type="ec_store_search" id="1226157836">
+    <div class="dmStoreSearchWrapper" id="1083680906">
+     <input type="text" placeholder="Búscalo" class="dmStoreSearchInput" maxlength="100" id="1601338007"/>
+     <div class="dmStoreSearchClickOverlay" id="1928909072">
+     </div>
+     <div class="dmStoreSearchIcon dm-common-icons-search" id="1281892389">
+     </div>
+    </div>
+   </div>
+   <div class="u_1712824718 dmPhotoGallery dmPhotoGalleryResp newPhotoGallery hasFullWidth" dmle_widget="dudaPhotoGalleryId" data-dmtmpl="true" id="1712824718" data-image-hover-effect="false" data-desktop-layout="square" data-desktop-columns="6" data-mobile-columns="1" data-rows-to-show="1" data-desktop-text-layout="bottom" data-tablet-layout="square" data-mobile-layout="square" data-element-type="dPhotoGalleryId" data-tablet-columns="5" data-placeholder="false" data-desktop-caption-alignment="center_center" data-enable-lazy-loading="true">
+    <ul class="u_1584590879 dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow photogalleryPaddingThumbnails" id="1584590879" dmle_original_id="1216156842" dont_set_id="true">
+     <li class="photoGalleryThumbs" id="1681019791">
+      <div class="image-container" id="1950025466">
+       <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/aguacatepapelillo.png" id="1825935910" class="u_1825935910 has-link" dm_dont_rewrite_url="false" href="/store/#!/~/accountSettings" file="false" data-link-url="/site/33b67c03/store/?preview=true&nee=true&showOriginal=true&dm_checkSync=1&dm_try_mode=true#!/~/accountSettings">
+        <img irh="" irw="" data-src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/aguacatepapelillo.png" id="1980830056" class="" alt="aguacate papelillo"/>
+       </a>
+      </div>
+      <div class="caption-container u_1913040305" style="display:none" id="1913040305">
+       <span class="caption-inner" id="1981876115">
+        <h3 class="caption-title u_1646579130" id="1646579130">
+         Aguacate papelillo
+        </h3>
+        <div class="caption-text u_1567834918" id="1567834918" no_space_e="true">
+         <p class="rteBlock" no_space_b="true" no_space_e="true">
+          $ 2000/Kg
+         </p>
+        </div>
+        <a class="caption-button dmWidget clearfix u_1330653784" id="1330653784" dm_dont_rewrite_url="false" href="/store/#!/~/accountSettings" file="false">
+         <span class="iconBg" dmle_generated="true" id="1022611539">
+          <span class="icon hasFontIcon icon-star" dmle_dont_remove="true" dmle_generated="true" id="1776311438">
+          </span>
+         </span>
+         <span class="text" id="1595206848">
+          Agregar al carrito
+         </span>
+        </a>
+       </span>
+      </div>
+     </li>
+     <li class="photoGalleryThumbs" id="1205398160">
+      <div class="image-container" id="1321344605">
+       <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/zapallo.png" id="1955601994">
+        <img irh="" irw="" data-src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/zapallo.png" id="1790024361" class="" alt="zapallo"/>
+       </a>
+      </div>
+      <div class="caption-container u_1015343688" style="display:none" id="1015343688">
+       <span class="caption-inner" id="1591318940">
+        <h3 class="caption-title u_1173888173" id="1173888173">
+         Zapallo
+        </h3>
+        <div class="caption-text u_1680516031" id="1680516031" no_space_e="true">
+         <p class="rteBlock" no_space_b="true" no_space_e="true">
+          $1850/Kg
+         </p>
+        </div>
+        <a class="caption-button dmWidget clearfix u_1676552547" id="1676552547">
+         <span class="iconBg" dmle_generated="true" id="1964143659">
+          <span class="icon hasFontIcon icon-star" dmle_dont_remove="true" dmle_generated="true" id="1946133920">
+          </span>
+         </span>
+         <span class="text" id="1424828985">
+          Comprar
+         </span>
+        </a>
+       </span>
+      </div>
+     </li>
+     <li class="photoGalleryThumbs" id="1266574877">
+      <div class="image-container" id="1192959216">
+       <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/cebollacabezonamorada.png" id="1278687516">
+        <img irh="" irw="" data-src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/cebollacabezonamorada.png" id="1536309997" class="" alt="cebolla cabezona morada"/>
+       </a>
+      </div>
+      <div class="caption-container u_1411667961" style="display:none" id="1411667961">
+       <span class="caption-inner" id="1447462730">
+        <h3 class="caption-title u_1192074927" id="1192074927">
+         Cebolla cabezona morada
+        </h3>
+        <div class="caption-text u_1497314641" id="1497314641" no_space_e="true">
+         <p class="rteBlock" no_space_b="true" no_space_e="true">
+          $1500/Kg
+         </p>
+        </div>
+        <a class="caption-button dmWidget clearfix u_1739739517" id="1739739517">
+         <span class="iconBg" dmle_generated="true" id="1535696765">
+          <span class="icon hasFontIcon icon-star" dmle_dont_remove="true" dmle_generated="true" id="1982877078">
+          </span>
+         </span>
+         <span class="text" id="1859077837">
+          Agregar al carrito
+         </span>
+        </a>
+       </span>
+      </div>
+     </li>
+     <li class="photoGalleryThumbs" id="1141944536">
+      <div class="image-container" id="1049179505">
+       <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/papapardacaucana.png" id="1036572575">
+        <img irh="" irw="" data-src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/papapardacaucana.png" id="1452644765" class="" alt="papa parda caucana"/>
+       </a>
+      </div>
+      <div class="caption-container u_1238699431" style="display:none" id="1238699431">
+       <span class="caption-inner" id="1840606666">
+        <h3 class="caption-title u_1987929712" id="1987929712">
+         Papa parda caucana
+        </h3>
+        <div class="caption-text u_1956710766" id="1956710766" no_space_e="true">
+         <p class="rteBlock" no_space_b="true" no_space_e="true">
+          $2000/Kg
+         </p>
+        </div>
+        <a class="caption-button dmWidget clearfix u_1642897899" id="1642897899">
+         <span class="iconBg" dmle_generated="true" id="1446634020">
+          <span class="icon hasFontIcon icon-star" dmle_dont_remove="true" dmle_generated="true" id="1275681553">
+          </span>
+         </span>
+         <span class="text" id="1838006191">
+          Agregar al carrito
+         </span>
+        </a>
+       </span>
+      </div>
+     </li>
+     <li class="photoGalleryThumbs" id="1510950325">
+      <div class="image-container" id="1724231162">
+       <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/coliflor.png" id="1226839902">
+        <img irh="" irw="" data-src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/coliflor.png" id="1653625363" class="" alt="coliflor"/>
+       </a>
+      </div>
+      <div class="caption-container u_1526140583" style="display:none" id="1526140583">
+       <span class="caption-inner" id="1878009999">
+        <h3 class="caption-title u_1365526641" id="1365526641">
+         Coliflor
+        </h3>
+        <div class="caption-text u_1221730816" id="1221730816" no_space_e="true">
+         <p class="rteBlock" no_space_b="true" no_space_e="true">
+          $4050/Kg
+         </p>
+        </div>
+        <a class="caption-button dmWidget clearfix u_1066156611" id="1066156611">
+         <span class="iconBg" dmle_generated="true" id="1633683630">
+          <span class="icon hasFontIcon icon-star" dmle_dont_remove="true" dmle_generated="true" id="1326157779">
+          </span>
+         </span>
+         <span class="text" id="1924479782">
+          Agregar al carrito
+         </span>
+        </a>
+       </span>
+      </div>
+     </li>
+     <li class="photoGalleryThumbs" id="1788591268">
+      <div class="image-container" id="1079412418">
+       <a data-dm-multisize-attr="href" data-image-url="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/platanoverdeharton.png" id="1937794292">
+        <img irh="" irw="" data-src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/platanoverdeharton.png" id="1451434394" class="" alt="platano verde harton"/>
+       </a>
+      </div>
+      <div class="caption-container u_1040134940" style="display:none" id="1040134940">
+       <span class="caption-inner" id="1035531204">
+        <h3 class="caption-title u_1892592379" id="1892592379">
+         Pl&aacute;tano verde hart&oacute;n
+        </h3>
+        <div class="caption-text u_1094474684" id="1094474684" no_space_e="true">
+         <p class="rteBlock" no_space_b="true" no_space_e="true">
+          $2000/Kg
+         </p>
+        </div>
+        <a class="caption-button dmWidget clearfix u_1505179954" id="1505179954">
+         <span class="iconBg" dmle_generated="true" id="1348898944">
+          <span class="icon hasFontIcon icon-star" dmle_dont_remove="true" dmle_generated="true" id="1360750758">
+          </span>
+         </span>
+         <span class="text" id="1395654982">
+          Agregar al carrito
+         </span>
+        </a>
+       </span>
+      </div>
+     </li>
+    </ul>
+    <div class="photoGalleryViewAll link" isall="true" data-viewall="View more" data-viewless="View less" style="display:none;" id="1605888330">
+    </div>
+   </div>
+   <h5 class="u_1658205426 dmNewParagraph" dmle_widget="paragraph" id="1658205426" data-uialign="center" no_space_e="true" data-anim-desktop="fadeInUp" data-editor-state="closed" data-element-type="paragraph">
+    <div no_space_b="true" no_space_e="true" style="text-align: right;">
+     <span no_space_b="true" no_space_e="true" class="lh-1 m-specific m-size-28 size-16">
+      <a href="/store" file="false" runtime_url="/store" no_space_b="true" no_space_e="true">
+       <font style="color: rgb(102, 102, 102);" no_space_b="true" no_space_e="true">
+        <span style="font-weight: 700;" no_space_b="true" no_space_e="true">
+         &nbsp;
+        </span>
+        <span class="m-specific lh-1 m-size-14" no_space_b="true" no_space_e="true">
+         View all products &gt;&gt;
+        </span>
+       </font>
+      </a>
+     </span>
+    </div>
+   </h5>
+  </div>
+ </div>
+</div>
+<div class="u_1794583790 dmRespRow dmMiddleContentRow desktop-no-padding" id="1794583790">
+ <div class="dmRespColsWrapper" id="1655398194">
+  <div class="u_1679711702 large-6 medium-6 small-12 dmRespCol dmAboutBottomFirstSection" id="1679711702">
+   <!-- *** INSERT YOUR HTML BELOW ***
+   <h2 class="u_1837892447 dmDefaultH3" id="1837892447" no_space_e="true" data-anim-desktop="fadeInLeft">
+    Contact us
+   </h2>
+   <div class="u_1566532198 dmform default" preserve_css="true" dmle_widget="dudaContactUsRespId" id="1566532198" data-element-type="dContactUsRespId">
+    <h3 class="dmform-title dmwidget-title" id="1975747725" hide="true">
+     Contact Us
+    </h3>
+    <div class="dmform-wrapper" preserve_css="true" id="1374401924">
+     <form method="post" class="dmRespDesignRow" locale="ENGLISH" id="1442173182">
+      <div class="dmforminput dmRespDesignCol small-12 required newLine large-12 medium-12" id="1535479545">
+       <label for="dmform-0" id="1951422297">
+        Name:
+       </label>
+       <input type="text" name="dmform-0" id="1525794922"/>
+       <input type="hidden" name="label-dmform-0" value="Name" id="1638033717"/>
+      </div>
+      <div class="dmforminput dmRespDesignCol small-12 required newLine large-12 medium-12" id="1188312678">
+       <label for="dmform-1" id="1753512516">
+        Email:
+       </label>
+       <input type="email" name="dmform-1" id="1231723105"/>
+       <input type="hidden" name="label-dmform-1" value="Email" id="1386340071"/>
+      </div>
+      <div class="dmforminput large-12 medium-12 dmRespDesignCol" id="1726809271">
+       <label for="dmform-3" id="1075943956">
+        Message:
+       </label>
+       <textarea name="dmform-3" id="1699123359">
+       </textarea>
+       <input type="hidden" name="label-dmform-3" value="Message" id="1708598627"/>
+      </div>
+      <div class="dmformsubmit dmWidget R" preserve_css="true" id="1501773849">
+       <input class="" name="submit" type="submit" value="Send Message" id="1487965245"/>
+      </div>
+      <input name="dmformsendto" type="hidden" value="example@mail.com" preserve_css="true" id="1006437883" data-success-page=""/>
+      <input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1860788795"/>
+      <input name="dmformsubject" type="hidden" value="Form Message" preserve_css="true" id="1244861405" data-success-page=""/>
+     </form>
+    </div>
+    <div class="dmform-success" style="display:none" preserve_css="true" id="1078704772" data-success-page="">
+     Thank you for contacting us.
+     <br id="1023700813"/>
+     We will get back to you as soon as possible
+    </div>
+    <div class="dmform-error" style="display:none" preserve_css="true" id="1277390250">
+     Oops, there was an error sending your message.
+     <br id="1720392235"/>
+     Please try again later
+    </div>
+   </div>
+  </div>
+  <div class="u_1679815109 large-6 medium-6 small-12 dmRespCol dmAboutBottomSecondSection" id="1679815109">
+   <!-- *** INSERT YOUR HTML BELOW ***
+   <div class="u_1841865230 imageWidget" editablewidget="true" dmle_widget="image" data-widget-type="image" id="1841865230" data-element-type="image">
+    <img src="https://irp-cdn.multiscreensite.com/33b67c03/dms3rep/multi/Image2-966x419.jpg" id="1163209752" dm_changed="true" class="u_1163209752"/>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+</div>
+-->

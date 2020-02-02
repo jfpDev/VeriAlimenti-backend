@@ -1,0 +1,123 @@
+/* ADD CUSTOM CSS TO THE PAGE - THIS AFFECTS ALL DEVICES */
+*#dm *.dmBody div.u_1794583790{
+background-color:rgb(247,247,247) !important}
+*#dm *.dmBody div.u_1841865230{
+width:966px !important;
+max-width:100% !important;
+display:block !important}
+*#dm *.dmBody div.u_1679815109{
+background-image:none !important;
+background-repeat:no-repeat !important;
+background-size:cover !important}
+*#dm *.dmBody div.u_1712824718 *.photoGalleryThumbs{
+border-style:solid !important;
+border-width:6px !important;
+border-color:rgb(243,243,243) !important}
+*#dm *.dmBody div.u_1712824718 *.dmPhotoGalleryHolder *.photoGalleryThumbs a{
+background-size:cover !important}
+*#dm *.dmBody *.u_1913040305{
+display:block !important}
+*#dm *.dmBody div.u_1712824718 .photoGalleryThumbs .image-container{
+border-radius:23% !important;
+-moz-border-radius:23% !important;
+-webkit-border-radius:23% !important}
+*#dm *.dmBody *.u_1712824718 .photoGalleryThumbs .image-container a{
+background-size:cover !important}
+*#dm *.dmBody *.u_1825935910{
+background-position:50% 50% !important}
+*#dm *.dmBody div.u_1688026295{
+background-color:rgba(184,165,165,1) !important}
+*#dm *.dmBody div.u_1712824718 .caption-inner{
+border-style:solid !important;
+border-width:3px !important;
+background-color:rgba(184,165,165,1) !important}
+*#dm *.dmBody div.u_1712824718{
+border-style:solid !important;
+border-width:3px !important;
+background-color:rgba(255,255,255,1) !important}
+*#dm *.dmBody *.u_1015343688{
+display:block !important}
+*#dm *.dmBody *.u_1411667961{
+display:block !important}
+*#dm *.dmBody *.u_1238699431{
+display:block !important}
+*#dm *.dmBody *.u_1526140583{
+display:block !important}
+*#dm *.dmBody *.u_1040134940{
+display:block !important}
+*#dm *.dmBody div.u_1226157836 .dmStoreSearchInput{
+background-color:rgba(255,255,255,1) !important;
+border-style:solid !important;
+border-width:3px !important;
+border-radius:25px !important;
+-moz-border-radius:25px !important;
+-webkit-border-radius:25px !important;
+box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important}
+*#dm *.dmBody div.u_1326641307 *.storeCategoryName{
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1326641307 *.storeCategoryName:hover{
+color:rgb(57,175,176) !important}
+*#dm *.dmBody div.u_1326641307 *.storeCategoryName.hover{
+color:rgb(57,175,176) !important}
+*#dm *.dmBody div.u_1326641307 *.storeCategoryName.selected{
+color:rgb(59,160,161) !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser.ecwid-productBrowser-CategoryPage div.ecwid-productBrowser-productNameLink a{
+font-weight:normal !important;
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-subcategories-categoryName span{
+font-weight:bold !important;
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-productNameLink a{
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-price-value{
+font-weight:bold !important;
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-price-list{
+font-weight:bold !important;
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-details div.ecwid-productBrowser-price{
+font-weight:bold !important;
+color:rgb(102,102,102) !important}
+*#dm *.dmBody div.u_1062939235{
+background-color:rgb(243,243,243) !important}
+*#dm *.dmBody div.u_1294046481 *.grid-category__title-inner{
+color:rgb(102,102,102) !important;
+font-size:16px !important;
+font-family:Arvo !important}
+*#dm *.dmBody div.u_1294046481 *.grid-product__title-inner{
+color:rgb(102,102,102) !important;
+font-size:16px !important;
+font-family:Arvo !important}
+*#dm *.dmBody div.u_1294046481 *.grid-product__price-amount{
+color:rgb(102,102,102) !important;
+font-size:23px !important;
+font-family:Arvo !important}
+*#dm *.dmBody div.u_1294046481 *.ec-store__category-page *.page-title__name{
+color:rgb(102,102,102) !important;
+font-family:Arvo !important;
+font-weight:bold !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-head{
+font-weight:bold !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-productBrowser-categoryPath{
+display:block !important}
+*#dm *.dmBody div.u_1294046481 *.ecwid-btn--primary{
+border-style:solid !important;
+border-width:0 !important;
+border-radius:50px !important;
+-moz-border-radius:50px !important;
+-webkit-border-radius:50px !important;
+font-weight:bold !important}
+*#dm *.dmBody div.u_1294046481 *.form-control--secondary *.form-control__button{
+background-color:rgba(59,160,161,1) !important}
+*#dm *.dmBody div.u_1294046481 *.page-title__name{
+color:rgba(102,102,102,1) !important}
+*#dm *.dmBody div.u_1294046481 h1.product-details__product-title{
+color:rgba(102,102,102,1) !important}
+*#dm *.dmBody div.u_1294046481 h1.product-details__product-title *{
+color:rgba(102,102,102,1) !important}
+*#dm *.dmBody div.u_1294046481 div.product-details__product-title{
+color:rgba(102,102,102,1) !important}
+*#dm *.dmBody div.u_1294046481 div.product-details__product-title *{
+color:rgba(102,102,102,1) !important}

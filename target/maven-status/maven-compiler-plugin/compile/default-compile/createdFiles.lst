@@ -1,0 +1,7 @@
+com/springboot/verialimenti/LoadDatabase.class
+com/springboot/verialimenti/Articles.class
+com/springboot/verialimenti/VerialimentiApplication.class
+com/springboot/verialimenti/ArticlesController.class
+com/springboot/verialimenti/ArticlesRepository.class
+com/springboot/verialimenti/ArticleNotFoundException.class
+com/springboot/verialimenti/ArticleNotFoundAdvice.class
